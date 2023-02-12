@@ -34,10 +34,12 @@ const languageCodes = {
 
 
     //get the dir
-    const indexOfCom = url.indexOf('.com');
-    let page = url.substring(0,indexOfCom + 4)
+
+    let web_ending = ".io"
+    const indexOfCom = url.indexOf(web_ending);
+    let page = url.substring(0,indexOfCom + web_ending.length)
     page = page.replace(/\./g, "-") + ".translate.goog";
-    const dir = url.substring(indexOfCom + 4);
+    const dir = url.substring(indexOfCom + web_ending.length);
     console.log(page);
     console.log(dir);
 
