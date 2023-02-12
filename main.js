@@ -30,7 +30,7 @@ const languageCodes = {
     //get value of textbox
     //const url = document.getElementById("url").value;
     url = window.location.host;
-    console.log(url)
+    console.log("url " + url)
 
 
     //get the dir
@@ -40,8 +40,8 @@ const languageCodes = {
     let page = url.substring(0,indexOfCom + web_ending.length)
     page = page.replace(/\./g, "-") + ".translate.goog";
     const dir = url.substring(indexOfCom + web_ending.length);
-    console.log(page);
-    console.log(dir);
+    console.log("page " +page);
+    console.log("url " +dir);
 
     let newUrl = page + dir + "?_x_tr_sl=" + languageCodes[currLang] + "&_x_tr_tl=" + languageCode  + "&_x_tr_hl=en&_x_tr_pto=wapp"
     currLang = selectedLanguage;
