@@ -46,8 +46,8 @@ const languageCodes = {
     console.log("page " +page);
     console.log("url " +dir);
 
-    let newUrl =  "https://www-" + page + "?_x_tr_sl=" + languageCodes[currLang] + "&_x_tr_tl=" + languageCode  + "&_x_tr_hl=en&_x_tr_pto=wapp"
+    let newUrl =  "https://" + page + "?_x_tr_sl=" + languageCodes[currLang] + "&_x_tr_tl=" + languageCode  + "&_x_tr_hl=en&_x_tr_pto=wapp"
     currLang = selectedLanguage;
-    window.location.href = newurl
+    window.location.href = newUrl
     
   });
