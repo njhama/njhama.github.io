@@ -29,6 +29,7 @@ const languageCodes = {
 
     //get value of textbox
     //const url = document.getElementById("url").value;
+    //url = "njhama.github.io"
     url = window.location.host;
     console.log("url " + url)
 
@@ -37,6 +38,8 @@ const languageCodes = {
 
     let web_ending = ".io"
     const indexOfCom = url.indexOf(web_ending);
+    console.log(indexOfCom)
+    console.log(web_ending.length)
     let page = url.substring(0,indexOfCom + web_ending.length)
     page = page.replace(/\./g, "-") + ".translate.goog";
     const dir = url.substring(indexOfCom + web_ending.length);
