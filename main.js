@@ -28,7 +28,8 @@ const languageCodes = {
 
 
     //get value of textbox
-    const url = document.getElementById("url").value;
+    //const url = document.getElementById("url").value;
+    url = window.location.host;
     console.log(url)
 
 
