@@ -6,42 +6,46 @@
 <body>
   <header>
     <h1>Welcome to My Webpage</h1>
-  </header>
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-  <main>
-    <section id="about">
-      <h2>About Us</h2>
-      <p>This is a sample website created for demonstration purposes. We are a fictitious company that specializes in providing top-quality services to our customers.</p>
-    </section>
-    <section id="services">
-      <h2>Our Services</h2>
+    <nav>
       <ul>
-        <li>Service 1</li>
-        <li>Service 2</li>
-        <li>Service 3</li>
+        <li><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Dropdown</a>
+          <ul class="dropdown-content">
+            <li><a href="#">Option 1</a></li>
+            <li><a href="#">Option 2</a></li>
+            <li><a href="#">Option 3</a></li>
+          </ul>
+        </li>
       </ul>
-    </section>
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <form action="submit-form.php" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-        <label for="message">Message:</label>
-        <textarea id="message" name="message"></textarea>
-        <input type="submit" value="Submit">
-      </form>
-    </section>
+    </nav>
+  </header>
+  <main>
+    <h2>A Random Essay</h2>
+    <p>The beauty of nature has been a source of inspiration for many poets, artists, and musicians throughout history. From the breathtaking landscapes of the Grand Canyon to the serene waters of a mountain lake, the natural world has the power to evoke strong emotions in those who experience it. However, despite its undeniable beauty, nature can also be incredibly cruel and unforgiving. Natural disasters such as earthquakes, hurricanes, and wildfires can cause widespread devastation, destroying homes and taking lives. Despite its dangers, however, there is still something undeniably alluring about nature and the great outdoors. Whether it is a leisurely hike through the woods or a strenuous climb up a mountain peak, there is something about being in the great outdoors that makes us feel truly alive. In the end, whether it is through art, music, or simply being in its presence, the beauty of nature will continue to inspire and captivate us for generations to come.</p>
   </main>
   <footer>
     <p>Copyright © 2023 My Webpage</p>
   </footer>
+  <style>
+    /* Dropdown styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
 </body>
 </html>
