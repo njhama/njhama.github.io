@@ -34,7 +34,7 @@ const languageCodes = {
     page = page.replace(/\./g, "-") + ".translate.goog";
     const dir = url.substring(indexOfCom + web_ending.length);
     console.log("page " +page);
-    console.log("url " +dir
+    console.log("url " +dir;
     let newUrl =  "https://" + page + "?_x_tr_sl=auto" + "&_x_tr_tl=" + languageCode  + "&_x_tr_hl=en&_x_tr_pto=wapp"
     currLang = selectedLanguage;
     window.location.href = newUrl
