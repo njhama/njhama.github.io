@@ -1,53 +1,14 @@
-const languageCodes = {
-    "english": "en",
-    "french": "fr",
-    "spanish": "es",
-    "italian": "it"
+const url = window.location.href; // get the URL of the current page
+  const apiUrl = `https://translate.google.com/translate_a/single?client=webapp&sl=auto&tl=${language}&dt=t&q=${encodeURIComponent(url)}`;
+  // make an AJAX request to the Google Translate API
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", apiUrl);
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      const responseText = xhr.responseText;
+      const translatedHtml = responseText.substring(responseText.indexOf('",null,["') + 10);
+      const decodedHtml = decodeURIComponent(JSON.parse(`["${translatedHtml}"]`)[0][0][0]);
+      document.documentElement.innerHTML = decodedHtml;
+    }
   };
-  
-  const languageSelect = document.getElementById('dropdown');
-  
-  if (!languageSelect) {
-    console.error('The language select element could not be found');
-  } else {
-    Object.keys(languageCodes).forEach(function(language) {
-      const option = document.createElement('option');
-      option.value = language;
-      option.textContent = language;
-      languageSelect.appendChild(option);
-    });
-  }
-
-
-  var currLang = "english";
-  languageSelect.addEventListener('change', function() {
-    const selectedLanguage = this.value;
-    
-    const languageCode = languageCodes[selectedLanguage];
-    console.log(`Selected language: ${selectedLanguage} (${languageCode})`);
-
-
-    //get value of textbox
-    //const url = document.getElementById("url").value;
-    //url = "njhama.github.io"
-    url = window.location.host;
-    console.log("url " + url)
-
-
-    //get the dir
-
-    let web_ending = ".io"
-    const indexOfCom = url.indexOf(web_ending);
-    console.log(indexOfCom)
-    console.log(web_ending.length)
-    let page = url.substring(0,indexOfCom + web_ending.length)
-    page = page.replace(/\./g, "-") + ".translate.goog";
-    const dir = url.substring(indexOfCom + web_ending.length);
-    console.log("page " +page);
-    console.log("url " +dir);
-
-    let newUrl =  "https://" + page + "?_x_tr_sl=" + languageCodes[currLang] + "&_x_tr_tl=" + languageCode  + "&_x_tr_hl=en&_x_tr_pto=wapp"
-    currLang = selectedLanguage;
-    window.location.href = newUrl
-    
-  });
+  xhr.send();
