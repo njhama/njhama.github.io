@@ -19,7 +19,7 @@ if (!languageSelect) {
     languageSelect.appendChild(option);
   });
 }
-url = window.location.href;
+url = window.location.host;
 var currLang = "english";
 languageSelect.addEventListener('change', function() {
   const selectedLanguage = this.value;
@@ -39,7 +39,7 @@ languageSelect.addEventListener('change', function() {
   
   let newUrl =  page + "?_x_tr_sl=auto" + "&_x_tr_tl=" + languageCode  + "&_x_tr_hl=en&_x_tr_pto=wapp";
   currLang = selectedLanguage;
-  window.location.href = newUrl
+  window.location.host = newUrl
   console.log(newUrl)
   
 });
