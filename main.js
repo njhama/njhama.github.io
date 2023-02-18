@@ -38,6 +38,7 @@ languageSelect.addEventListener('change', function() {
   const dir = url.substring(indexOfCom + web_ending.length);
   
   let newUrl =  page + "?_x_tr_sl=auto" + "&_x_tr_tl=" + languageCode  + "&_x_tr_hl=en&_x_tr_pto=wapp";
+  alert(newUrl)
   currLang = selectedLanguage;
   window.location.host = newUrl
   console.log(newUrl)
