@@ -12,21 +12,27 @@
       const input = document.getElementById('myInput');
 
       button.addEventListener('click', () => {
-        const inputValue = input.value;
-        console.log(inputValue);
-        window.location.href = inputValue
+        const url = input.value;
+        
+        console.log("url:" + url)
         // do something with the input value here
-        let web_ending = ".io"
+        let web_ending = ".com"
         const indexOfCom = url.indexOf(web_ending);
+        console.log(indexOfCom)
+        
         let page = url.substring(0,indexOfCom + web_ending.length)
+        console.log("pgae" + page)
         page = page.replace(/\./g, "-") + ".translate.goog";
+        console.log("pgae" + page)
         const dir = url.substring(indexOfCom + web_ending.length);
 
-        console.log(page)
-        let newUrl = page + "?_x_tr_sl=auto&_x_tr_tl=" + languageCode  + "&_x_tr_hl=en&_x_tr_pto=wapp"
+        console.log("page" + page)
+        let newUrl = page + "?_x_tr_sl=auto&_x_tr_tl=" + "sp"  + "&_x_tr_hl=en&_x_tr_pto=wapp"
         //console.log(newUrl)
-        window.location.href = newUrl
-        window.open(newUrl, "_blank")
+        alert(newUrl)
+        //window.location.href = newUrl
+
+        //window.open(newUrl, "_blank")
       });
     </script>
   </body>
