@@ -19,6 +19,8 @@ if (!languageSelect) {
 }
 
 languageSelect.addEventListener('change', function() {
-  if (window.location.host.includes("translate.goog"))  {window.location.host = window.location.host = "www.uscannenbergmedia.com" + window.location.pathname;}
-  else  {window.location.host = "www-njhama-github-io.translate.goog"+window.location.pathname+"?_x_tr_sl=auto&_x_tr_tl="+languageCodes[this.value]+"&_x_tr_hl=en&_x_tr_pto=wapp";} 
+  const newUrl;
+  if (window.location.host.includes("translate.goog"))  {newUrl= window.location.host = "www.uscannenbergmedia.com" + window.location.pathname;}
+  else  {newUrl = "www-njhama-github-io.translate.goog"+window.location.pathname+"?_x_tr_sl=auto&_x_tr_tl="+languageCodes[this.value]+"&_x_tr_hl=en&_x_tr_pto=wapp";} 
+  window.location.host = newUrl;
 });
