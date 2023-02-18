@@ -21,9 +21,10 @@ if (!languageSelect) {
 }
 url = window.location.host;
 var currLang = "english";
+
+
 languageSelect.addEventListener('change', function() {
   const selectedLanguage = this.value;
-  
   const languageCode = languageCodes[selectedLanguage];
   console.log(`Selected language: ${selectedLanguage} (${languageCode})`);
   
@@ -31,17 +32,12 @@ languageSelect.addEventListener('change', function() {
   //get the dir
   let web_ending = ".io"
   const indexOfCom = url.indexOf(web_ending);
-  console.log(indexOfCom)
-  console.log(web_ending.length)
   let page = url.substring(0,indexOfCom + web_ending.length)
   page = page.replace(/\./g, "-") + ".translate.goog";
   const dir = url.substring(indexOfCom + web_ending.length);
   
-  let newUrl =  page + "?_x_tr_sl=auto" + "&_x_tr_tl=" + languageCode  + "&_x_tr_hl=en&_x_tr_pto=wapp";
+  let newUrl =  page + "?_x_tr_sl=auto" + "&_x_tr_tl=" + languageCode + "&_x_tr_hl=en&_x_tr_pto=wapp";
   console.log(newUrl)
-  currLang = selectedLanguage;
-  alert(newUrl)
-  //window.location.host = newUrl
-  console.log(newUrl)
+  window.location.host = newUrl
   
 });
