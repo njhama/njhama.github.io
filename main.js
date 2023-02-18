@@ -19,11 +19,12 @@ if (!languageSelect) {
     languageSelect.appendChild(option);
   });
 }
-url = window.location.href;
+
 var currLang = "english";
 
 
 languageSelect.addEventListener('change', function() {
+  url = window.location.href;
   const selectedLanguage = this.value;
   const languageCode = languageCodes[selectedLanguage];
   let web_ending = ".io"
