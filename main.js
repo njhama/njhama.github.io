@@ -17,23 +17,14 @@ if (!languageSelect) {
     languageSelect.appendChild(option);
   });
 }
-var currLang = "english";
+
 languageSelect.addEventListener('change', function() {
-  const selectedLanguage = this.value;
-  const languageCode = languageCodes[selectedLanguage];
+  if (window.location.host.includes("translate.goog"))  {alert(window.location.host = "www.uscannenbergmedia.com" + window.location.pathname);}
+  else  {alert("www-uscannenbergmedia-com.translate.goog"+window.location.pathname+"?_x_tr_sl=auto&_x_tr_tl="+languageCodes[this.value]+"&_x_tr_hl=en&_x_tr_pto=wapp");} 
 
-  let curr = window.location.host;
-  if (curr.includes("translate.goog"))  {window.location.host = "www.uscannenbergmedia.com" + window.location.pathname;}
-  else  {window.location.host = "www-uscannenbergmedia-com.translate.goog" + window.location.pathname;} 
 });
+//if (window.location.host.includes("translate.goog"))  {window.location.host = "www.uscannenbergmedia.com" + window.location.pathname;}
+//else  {window.location.host = "www-uscannenbergmedia-com.translate.goog" + window.location.pathname;} 
 
-
-
-//on change
-//get the lcaiton host 
-//if it contans the translate.goog then
-  //scrape teh pahtname from the url 
-  //then go to uscannenbergmedia.com + path
-//else
-  //get the pathname of the window location
-  //go to www-uscannenbergedia-com.translate.goog + path
+// if (window.location.host.includes("translate.goog"))  {window.location.host = "www.uscannenbergmedia.com" + window.location.pathname;}
+//else  {window.location.host = "www-uscannenbergmedia-com.translate.goog"+window.location.pathname+"?_x_tr_sl=auto&_x_tr_tl="+languageCodes[this.value]+"&_x_tr_hl=en&_x_tr_pto=wapp";} 
