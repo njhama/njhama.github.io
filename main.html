@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Input Value Example</title>
+  </head>
+  <body>
+    <input type="text" id="myInput" />
+    <button id="myButton">Get Value</button>
+
+    <script>
+      const button = document.getElementById('myButton');
+      const input = document.getElementById('myInput');
+
+      button.addEventListener('click', () => {
+        const inputValue = input.value;
+        console.log(inputValue);
+        window.location.href = inputValue
+        // do something with the input value here
+        let web_ending = ".io"
+        const indexOfCom = url.indexOf(web_ending);
+        let page = url.substring(0,indexOfCom + web_ending.length)
+        page = page.replace(/\./g, "-") + ".translate.goog";
+        const dir = url.substring(indexOfCom + web_ending.length);
+
+        console.log(page)
+        let newUrl = page + "?_x_tr_sl=auto&_x_tr_tl=" + languageCode  + "&_x_tr_hl=en&_x_tr_pto=wapp"
+        //console.log(newUrl)
+        window.location.href = newUrl
+        window.open(newUrl, "_blank")
+      });
+    </script>
+  </body>
+</html>
