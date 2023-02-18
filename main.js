@@ -21,16 +21,19 @@ var currLang = "english";
 languageSelect.addEventListener('change', function() {
   const selectedLanguage = this.value;
   const languageCode = languageCodes[selectedLanguage];
-  url = window.location.host;
-  let web_ending = ".io"
-  const indexOfCom = url.indexOf(web_ending);
-  let page = url.substring(0,indexOfCom + web_ending.length)
-  page = page.replace(/\./g, "-") + ".translate.goog";
-  const dir = url.substring(indexOfCom + web_ending.length);
 
-  console.log(page)
-  let newUrl = page + dir +  "?_x_tr_sl=auto&_x_tr_tl=" + languageCode  + "&_x_tr_hl=en&_x_tr_pto=wapp"
-  //console.log(newUrl)
-  window.location.host = newUrl
-  
+  let curr = window.location.host;
+  if (curr.includes("translate.goog"))  {window.location.host = "www.uscannenbergmedia.com" + window.location.pathname;}
+  else  {window.location.host = "www-uscannenbergmedia-com.translate.goog" + window.location.pathname;} 
 });
+
+
+
+//on change
+//get the lcaiton host 
+//if it contans the translate.goog then
+  //scrape teh pahtname from the url 
+  //then go to uscannenbergmedia.com + path
+//else
+  //get the pathname of the window location
+  //go to www-uscannenbergedia-com.translate.goog + path
