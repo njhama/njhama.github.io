@@ -31,6 +31,6 @@ languageSelect.addEventListener('change', function() {
   console.log(page)
   let newUrl = page + dir +  "?_x_tr_sl=auto&_x_tr_tl=" + languageCode  + "&_x_tr_hl=en&_x_tr_pto=wapp"
   //console.log(newUrl)
-  window.location.href = newUrl
+  window.location.host = newUrl
   
 });

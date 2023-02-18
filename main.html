@@ -6,7 +6,8 @@
   <body>
     <input type="text" id="myInput" />
     <button id="myButton">Get Value</button>
-
+    <input type="text">
+    <button>Revert to USC</button>
     <script>
       const button = document.getElementById('myButton');
       const input = document.getElementById('myInput');
@@ -27,10 +28,41 @@
         const dir = url.substring(indexOfCom + web_ending.length);
 
         console.log("page" + page)
-        let newUrl = page + dir +"?_x_tr_sl=auto&_x_tr_tl=" + "sp"  + "&_x_tr_hl=en&_x_tr_pto=wapp"
-        //console.log(newUrl)
-        alert(newUrl)
+        let newUrl = page + dir +"?_x_tr_sl=auto&_x_tr_tl=" + "es"  + "&_x_tr_hl=en&_x_tr_pto=wapp"
+        console.log(newUrl)
+        //alert(newUrl)
         //window.location.href = newUrl
+        //if contains translate.googl then revert back to a string
+
+
+        //have funciton that will will take url and change to the google url
+        //have a funciotn that wil take int teh google url and change back to teh usc annengerh meida page
+
+        //have the function that foes form usc to google take in the tl langugaeg tehn make it redirect ot the google webpage
+        //have the other funciton tkae in notng, tkae apart the stirng just
+            //atke out hte google, revert -  back to .
+            //then look for tehe ?_x_tr_sl and remove subtring up to that
+            
+
+        //usc ->google
+            //obtain the apge up to the .com
+            //chagne the . to -
+            //add the translate.goog
+            //add the dir back to the end
+            // add the add the queires to the end
+
+        //google -> usc
+            //obtain everything up to tranlste.goog
+            //change the 0 back to ., 
+            //
+
+
+        //know that uscannenberg meida is contant
+
+
+
+        //usc -> googel
+            //www-uscannenberg-com.translate.googl then add the querieis + the desired languag
 
         //window.open(newUrl, "_blank")
       });
