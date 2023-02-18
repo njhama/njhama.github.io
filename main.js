@@ -19,13 +19,14 @@ if (!languageSelect) {
     languageSelect.appendChild(option);
   });
 }
+url = window.location.href;
 var currLang = "english";
 languageSelect.addEventListener('change', function() {
   const selectedLanguage = this.value;
   
   const languageCode = languageCodes[selectedLanguage];
   console.log(`Selected language: ${selectedLanguage} (${languageCode})`);
-  url = window.location.href;
+  
   console.log("url " + url)
   //get the dir
   let web_ending = ".io"
