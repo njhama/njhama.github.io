@@ -5,6 +5,8 @@ const languageCodes = {
   "italian": "it"
 };
 
+
+
 const languageSelect = document.getElementById('dropdown');
 
 if (!languageSelect) {
@@ -33,9 +35,10 @@ languageSelect.addEventListener('change', function() {
   let page = url.substring(0,indexOfCom + web_ending.length)
   page = page.replace(/\./g, "-") + ".translate.goog";
   const dir = url.substring(indexOfCom + web_ending.length);
- 
-  let newUrl =  "https://" + page + "?_x_tr_sl=auto" + "&_x_tr_tl=" + languageCode  + "&_x_tr_hl=en&_x_tr_pto=wapp";
+  
+  let newUrl =  page + "?_x_tr_sl=auto" + "&_x_tr_tl=" + languageCode  + "&_x_tr_hl=en&_x_tr_pto=wapp";
   currLang = selectedLanguage;
   window.location.href = newUrl
+  console.log(newUrl)
   
 });
