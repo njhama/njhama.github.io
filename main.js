@@ -20,21 +20,13 @@ if (!languageSelect) {
 var currLang = "english";
 languageSelect.addEventListener('change', function() {
   const selectedLanguage = this.value;
-  
   const languageCode = languageCodes[selectedLanguage];
-  console.log(`Selected language: ${selectedLanguage} (${languageCode})`);
   url = window.location.host;
-  console.log("url " + url)
-  //get the dir
-  let web_ending = ".com"
+  let web_ending = ".io"
   const indexOfCom = url.indexOf(web_ending);
-  console.log(indexOfCom)
-  console.log(web_ending.length)
   let page = url.substring(0,indexOfCom + web_ending.length)
   page = page.replace(/\./g, "-") + ".translate.goog";
   const dir = url.substring(indexOfCom + web_ending.length);
-  console.log("page " +page);
-  console.log("url " +dir);
   let newUrl = page + "?_x_tr_sl=auto&_x_tr_tl=" + languageCode  + "&_x_tr_hl=en&_x_tr_pto=wapp"
 
   window.location.href = newUrl
