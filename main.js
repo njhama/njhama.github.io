@@ -25,7 +25,7 @@ languageSelect.addEventListener('change', function()  {
   //get the name of the languae 
   //check teh domain
   let extractedStr;
-  if (window.location.includes("translate.goog")) {
+  if (window.location.host.includes("translate.goog")) {
     //str = window.location.href;
     extractedStr = window.location.href.substring(str.indexOf("?_x_tr_sl=auto&_x_tr_tl=") + 24, str.indexOf("&", str.indexOf("?_x_tr_sl=auto&_x_tr_tl=") + 24));
   }
