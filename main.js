@@ -46,6 +46,8 @@ if (window.location.href.includes("njhama.github.io"))  {
   languageSelect.value = "english"
 }
 else  {
+  console.log(window.location.href.indexOf('?_x_tr_sl=auto&_x_tr_tl=') + 25, 2)
+  
   languageSelect.value = languageCodes.get(window.location.href.indexOf('?_x_tr_sl=auto&_x_tr_tl=') + 25, 2);
   
 }
