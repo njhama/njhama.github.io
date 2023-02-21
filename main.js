@@ -32,7 +32,7 @@ languageSelect.addEventListener('change', function()  {
   else  {
     extractedStr = "en";
   }
-
+  console.log(extractedStr)
   languageSelect.value = languageCodes[extractedStr];
   window.location.href = window.location.host.includes("njhama.github.io") ? "https://njhama-github-io.translate.goog" + window.location.pathname + "?_x_tr_sl=auto&_x_tr_tl=" + languageCodes[this.value] + "&_x_tr_hl=en&_x_tr_pto=wapp" : (languageCodes[this.value] == "en" ? "https://njhama.github.io" + window.location.pathname : "https://njhama-github-io.translate.goog" + window.location.pathname + "?_x_tr_sl=auto&_x_tr_tl=" + languageCodes[this.value] + "&_x_tr_hl=en&_x_tr_pto=wapp") 
 
