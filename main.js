@@ -21,10 +21,7 @@ const languageNames = Object.keys(languageCodes).reduce((obj, key) => {
   return obj;
 }, {});
 
-languageSelect.addEventListener('change', function()  {
-  //get the name of the languae 
-  //check teh domain
-  let extractedStr;
+let extractedStr;
   if (window.location.host.includes("translate.goog")) {
     //str = window.location.href;
     extractedStr = window.location.href.substring(str.indexOf("?_x_tr_sl=auto&_x_tr_tl=") + 24, str.indexOf("&", str.indexOf("?_x_tr_sl=auto&_x_tr_tl=") + 24));
@@ -34,6 +31,13 @@ languageSelect.addEventListener('change', function()  {
   }
   console.log(extractedStr)
   languageSelect.value = languageCodes[extractedStr];
+
+
+
+languageSelect.addEventListener('change', function()  {
+  //get the name of the languae 
+  //check teh domain
+
   window.location.href = window.location.host.includes("njhama.github.io") ? "https://njhama-github-io.translate.goog" + window.location.pathname + "?_x_tr_sl=auto&_x_tr_tl=" + languageCodes[this.value] + "&_x_tr_hl=en&_x_tr_pto=wapp" : (languageCodes[this.value] == "en" ? "https://njhama.github.io" + window.location.pathname : "https://njhama-github-io.translate.goog" + window.location.pathname + "?_x_tr_sl=auto&_x_tr_tl=" + languageCodes[this.value] + "&_x_tr_hl=en&_x_tr_pto=wapp") 
 
   
