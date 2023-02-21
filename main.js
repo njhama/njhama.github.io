@@ -40,16 +40,20 @@ else {
     languageSelect.appendChild(option);
   });
 };
-//look at teh url for the language to translte too
-//if default page, then the laniage = english
+
 if (window.location.href.includes("njhama.github.io"))  {
   languageSelect.value = "english"
 }
 else  {
   console.log(window.location.href.substring(window.location.href.indexOf("_x_tr_tl=") + 9).split("&")[0]);
   
-  languageSelect.value = window.location.href.substring(window.location.href.indexOf("_x_tr_tl=") + 9).split("&")[0];
-
+  let languageCode = window.location.href.substring(window.location.href.indexOf("_x_tr_tl=") + 9).split("&")[0];
+  for (const [key, value] of languageCodes.entries()) {
+    if (value === languageCode) {
+      languageSelect.value = key;
+      break;
+    }
+  }
   
 }
 
