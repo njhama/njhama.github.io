@@ -46,9 +46,9 @@ if (window.location.href.includes("njhama.github.io"))  {
   languageSelect.value = "english"
 }
 else  {
-  console.log(window.location.href.substring(window.location.href.indexOf('?_x_tr_tl=') + 11).substring(0, 2));
+  console.log(window.location.href.substring(window.location.href.indexOf("_x_tr_tl=") + 9).split("&")[0]);
   
-  languageSelect.value = window.location.href.substring(window.location.href.indexOf('?_x_tr_tl=') + 11).substring(0, 2);
+  languageSelect.value = window.location.href.substring(window.location.href.indexOf("_x_tr_tl=") + 9).split("&")[0];
 
   
 }
