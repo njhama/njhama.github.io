@@ -1,23 +1,3 @@
-/** 
-const languageCodes = {
-  "english": "en",
-  "french": "fr",
-  "spanish": "es",
-  "italian": "it"
-};
-
-const languageSelect = document.getElementById('dropdown');
-
-if (!languageSelect) {console.error('The language select element could not be found');} 
-else {
-  Object.keys(languageCodes).forEach(function(language) {
-    const option = document.createElement('option');
-    option.value = language;
-    option.textContent = language;
-    languageSelect.appendChild(option);
-  });
-};
-*/
 
 
 const languageCodes = new Map([
