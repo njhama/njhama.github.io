@@ -21,10 +21,11 @@ else {
 
 
 const languageCodes = new Map([
-  ["english", "en"],
-  ["french", "fr"],
-  ["spanish", "es"],
-  ["italian", "it"]
+  ["English", "en"],
+  ["French", "fr"],
+  ["Spanish", "es"],
+  ["Italian", "it"],
+  ["Chinese", "zh-CN"]
 ]);
 
 const languageSelect = document.getElementById('dropdown');
@@ -64,3 +65,4 @@ languageSelect.addEventListener('change', function()  {
   window.location.href = window.location.host.includes("njhama.github.io") ? "https://njhama-github-io.translate.goog" + window.location.pathname + "?_x_tr_sl=auto&_x_tr_tl=" + languageCodes.get(this.value) + "&_x_tr_hl=en&_x_tr_pto=wapp" : (languageCodes.get(this.value) == "en" ? "https://njhama.github.io" + window.location.pathname : "https://njhama-github-io.translate.goog" + window.location.pathname + "?_x_tr_sl=auto&_x_tr_tl=" + languageCodes.get(this.value) + "&_x_tr_hl=en&_x_tr_pto=wapp");
 });
 
+//window.location.href = window.location.host.includes("uscannenbergmedia.com") ? "https://uscannenbergmedia-com.translate.goog" + window.location.pathname + "?_x_tr_sl=auto&_x_tr_tl=" + languageCodes.get(this.value) + "&_x_tr_hl=en&_x_tr_pto=wapp" : (languageCodes.get(this.value) == "en" ? "https://uscannenbergmedia.com" + window.location.pathname : "https://uscannenbergmedia-com.translate.goog" + window.location.pathname + "?_x_tr_sl=auto&_x_tr_tl=" + languageCodes.get(this.value) + "&_x_tr_hl=en&_x_tr_pto=wapp");
