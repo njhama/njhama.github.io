@@ -9,6 +9,9 @@ const languageCodes = new Map([
   ["Korean", "ko"],
   ["Japense", "ja"],
   ["Russian", "ru"],
+  ["Farsi", "fa"],
+  ["German", "de"],
+  ["Portuguese", "pt"],
 ]);
 
 const languageSelect = document.getElementById('dropdown');
