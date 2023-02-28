@@ -7,9 +7,8 @@ const languageCodes = new Map([
   ["Italian", "it"],
   ["Chinese", "zh-CN"],
   ["Korean", "ko"],
-  ["Japense", "jp"],
+  ["Japense", "ja"],
   ["Russian", "ru"],
-  []
 ]);
 
 const languageSelect = document.getElementById('dropdown');
