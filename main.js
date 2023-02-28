@@ -7,7 +7,7 @@ const languageCodes = new Map([
   ["Italian", "it"],
   ["Chinese", "zh-CN"],
   ["Korean", "ko"],
-  ["Japense", "ja"],
+  ["Japanese", "ja"],
   ["Russian", "ru"],
   ["Farsi", "fa"],
   ["German", "de"],
