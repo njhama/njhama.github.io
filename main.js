@@ -24,7 +24,7 @@ languageCodes.forEach(function(value, key) {
 });
 
 if (window.location.href.includes("njhama.github.io"))  {
-  document.querySelector('#translateButton').innerHTML = "English";
+  //document.querySelector('#translateButton').innerHTML = "English";
 }
 else  {
   console.log(window.location.href.substring(window.location.href.indexOf("_x_tr_tl=") + 9).split("&")[0]);
