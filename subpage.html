@@ -8,39 +8,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <style>
-      #dropdown {
-        color: #990302;
-        border: 2px solid #990302;
-        border-radius: 20px;
-        text-align: center;
-        height: 40px;
-
-        -webkit-appearance: none;
-        -moz-appearance: none;
+     
         
-      }
-
-      #tts-button {
-        
-        color: rgb(167, 24, 24);
-        border: 2px solid rgb(167, 24, 24);
-        border-radius: 20px;
-        
-        height: 40px;
-        background-color: white;
-        background: url("play.svg");
-        background-repeat: no-repeat;
-
-        padding-left: 5px;
-        padding-right: 5px
-
-      }
+  
       
 
-      .icon {
-        background: url("play.svg");
-        float: left;
-      }
+      
 
       
 
@@ -52,34 +25,24 @@
     <header>
         <h1>Welcome to My Webpage</h1>
         <nav>
+          <!--Listen-->
+          <button type="button" class="btn btn-outline-danger"><img src="play.svg" alt="">Listen to this article</button>
           
-         
-
-          <button type="button" class="btn btn-outline-danger">
-            <img src="play.svg" alt="">
-            Listen to this article
-          </button>
-          
+          <!--Translate-->
           <div class="btn-group">
-            <button type="button" id = "translateButton" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <button type="button" id = "translateButton" class="btn btn-danger dropdown-toggle" class = "notranslate" data-bs-toggle="dropdown" aria-expanded="false">
               Translate
             </button>
             <ul class="dropdown-menu" id = "dropdown-menu"></ul>
           </div>
 
-
-          <!--  <select id = "dropdown" class = "notranslate"></select>-->
-          
-
-
+          <!--Share-->
           <button type="button" class="btn btn-outline-danger">
-            <img src="share-2 (1).svg" alt="">
-            Share
-          </button>
-          
+            <img src="share.svg" alt="">
+          </button>     
         </nav>
-
       </header>
+
       <main>
         <h2>Nicky is Cool</h2>
         <p>The beauty of nature has been a source of inspiration for many poets, artists, and musicians throughout history. From the breathtaking landscapes of the Grand Canyon to the serene waters of a mountain lake, the natural world has the power to evoke strong emotions in those who experience it. However, despite its undeniable beauty, nature can also be incredibly cruel and unforgiving. Natural disasters such as earthquakes, hurricanes, and wildfires can cause widespread devastation, destroying homes and taking lives. Despite its dangers, however, there is still something undeniably alluring about nature and the great outdoors. Whether it is a leisurely hike through the woods or a strenuous climb up a mountain peak, there is something about being in the great outdoors that makes us feel truly alive. In the end, whether it is through art, music, or simply being in its presence, the beauty of nature will continue to inspire and captivate us for generations to come.</p>
