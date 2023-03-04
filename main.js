@@ -30,7 +30,7 @@ languageCodes.forEach(function(value, key) {
 
 if (window.location.href.includes("njhama.github.io"))  {
   //console.log("ok we in")
-  document.querySelector('#translateButton').innerHTML = "English";
+  document.querySelector('#translateButton').textContent = "English";
 }
 
 //else
@@ -40,7 +40,7 @@ if (window.location.href.includes("njhama.github.io"))  {
   for (const [key, value] of languageCodes.entries()) {
     console.log(languageCode)
     if (value === languageCode) {
-      document.querySelector('#translateButton').innerHTML = key;
+      document.querySelector('#translateButton').textContent = key;
       console.log("new language", key);
       break;
     }
