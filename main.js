@@ -44,7 +44,8 @@ else {
 };
 
 if (window.location.href.includes("njhama.github.io"))  {
-  languageSelect.value = "English"
+  document.querySelector('#translateButton').innerHTML = "English";
+  //languageSelect.value = "English"
 }
 else  {
   
@@ -54,7 +55,7 @@ else  {
   for (const [key, value] of languageCodes.entries()) {
     if (value === languageCode) {
       //languageSelect.value = key;
-      //document.querySelector('#translateButton').innerHTML = key;
+      document.querySelector('#translateButton').innerHTML = key;
       console.log("new language", key);
       //document.getElementById
       break;
