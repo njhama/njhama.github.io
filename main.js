@@ -37,7 +37,7 @@ else  {
     }
   }
 
-  alert("loaded");
+  //alert("loaded");
 myList.addEventListener('click', function(event) {
   console.log('click');
   if (event.target.tagName === 'A') {
@@ -46,7 +46,7 @@ myList.addEventListener('click', function(event) {
   }
 });
 
-alert("loaded");
+//alert("loaded");
 function myFunction(clickedElement) {
   console.log('The following li element was clicked:', clickedElement.innerHTML);
   //window.location.href = window.location.host.includes("njhama.github.io") ? "https://njhama-github-io.translate.goog" + window.location.pathname + "?_x_tr_sl=auto&_x_tr_tl=" + languageCodes.get(clickedElement.innerHTML) + "&_x_tr_hl=en&_x_tr_pto=wapp" : (languageCodes.get(clickedElement.innerHTML) == "en" ? "https://njhama.github.io" + window.location.pathname : "https://njhama-github-io.translate.goog" + window.location.pathname + "?_x_tr_sl=auto&_x_tr_tl=" + languageCodes.get(clickedElement.innerHTML) + "&_x_tr_hl=en&_x_tr_pto=wapp");
