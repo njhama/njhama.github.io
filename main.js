@@ -13,7 +13,8 @@ const languageCodes = new Map([
   ["Portuguese", "pt"],
 ]);
 
-alert("one")
+
+
 const myList = document.querySelector('#dropdown-menu');
 languageCodes.forEach(function(value, key) {
   const newList = document.createElement('li');
@@ -24,16 +25,15 @@ languageCodes.forEach(function(value, key) {
   myList.appendChild(newList);
 });
 
-alert("two")
-/* 
-if (window.location.href.includes("njhama.github.io"))  {
-  console.log("ok we in")
-  //document.querySelector('#translateButton').innerHTML = "English";
 
+
+if (window.location.href.includes("njhama.github.io"))  {
+  //console.log("ok we in")
+  document.querySelector('#translateButton').innerHTML = "English";
 }
-*/
+
 //else
-if (!window.location.href.includes("njhama.github.io"))  {
+if (window.location.href.includes("njhama.github.io"))  {
   console.log(window.location.href.substring(window.location.href.indexOf("_x_tr_tl=") + 9).split("&")[0]);
   let languageCode = window.location.href.substring(window.location.href.indexOf("_x_tr_tl=") + 9).split("&")[0];
   for (const [key, value] of languageCodes.entries()) {
@@ -43,7 +43,8 @@ if (!window.location.href.includes("njhama.github.io"))  {
       break;
     }
   }
-  alert("three");
+}
+  
   //alert("loaded");
 myList.addEventListener('click', function(event) {
   console.log('click');
@@ -53,11 +54,10 @@ myList.addEventListener('click', function(event) {
   }
 });
 
-alert("loaded");
 function myFunction(clickedElement) {
   console.log('The following li element was clicked:', clickedElement.innerHTML);
-  //window.location.href = window.location.host.includes("njhama.github.io") ? "https://njhama-github-io.translate.goog" + window.location.pathname + "?_x_tr_sl=auto&_x_tr_tl=" + languageCodes.get(clickedElement.innerHTML) + "&_x_tr_hl=en&_x_tr_pto=wapp" : (languageCodes.get(clickedElement.innerHTML) == "en" ? "https://njhama.github.io" + window.location.pathname : "https://njhama-github-io.translate.goog" + window.location.pathname + "?_x_tr_sl=auto&_x_tr_tl=" + languageCodes.get(clickedElement.innerHTML) + "&_x_tr_hl=en&_x_tr_pto=wapp");
+  window.location.href = window.location.host.includes("njhama.github.io") ? "https://njhama-github-io.translate.goog" + window.location.pathname + "?_x_tr_sl=auto&_x_tr_tl=" + languageCodes.get(clickedElement.innerHTML) + "&_x_tr_hl=en&_x_tr_pto=wapp" : (languageCodes.get(clickedElement.innerHTML) == "en" ? "https://njhama.github.io" + window.location.pathname : "https://njhama-github-io.translate.goog" + window.location.pathname + "?_x_tr_sl=auto&_x_tr_tl=" + languageCodes.get(clickedElement.innerHTML) + "&_x_tr_hl=en&_x_tr_pto=wapp");
 }
-}
+
 
 
