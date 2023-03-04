@@ -19,7 +19,7 @@ const myList = document.querySelector('#dropdown-menu');
 languageCodes.forEach(function(value, key) {
   const newList = document.createElement('li');
   const newLink = document.createElement('a');
-  newLink.classList.add("dropdown-item");
+  newLink.classList.add("dropdown-item notranslate");
   newLink.innerHTML = key;
   newList.appendChild(newLink);
   myList.appendChild(newList);
@@ -37,6 +37,7 @@ if (window.location.href.includes("njhama.github.io"))  {
   console.log(window.location.href.substring(window.location.href.indexOf("_x_tr_tl=") + 9).split("&")[0]);
   let languageCode = window.location.href.substring(window.location.href.indexOf("_x_tr_tl=") + 9).split("&")[0];
   for (const [key, value] of languageCodes.entries()) {
+    console.log(languageCode)
     if (value === languageCode) {
       document.querySelector('#translateButton').innerHTML = key;
       console.log("new language", key);
