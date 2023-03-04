@@ -55,9 +55,19 @@
           </div>
 
           <!--Share-->
-          <button type="button" class="btn btn-outline-danger">
-            <img id = "share_btn" src="share.svg" alt="">
-          </button>     
+          <div class="btn-group">
+            <button type="button" class="btn btn-outline-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <img id = "share_btn" src="share.svg" alt="">
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#"><img src="images/link.svg" alt=""> Copy Link</a></li>
+              <li><a class="dropdown-item" href="#"><img src="images/mail.svg" alt=""> Email</a></li>
+              <li><a class="dropdown-item" href="#"><img src="images/linkedin.svg" alt=""> Linkedin</a></li>
+              <li><a class="dropdown-item" href="#"><img src="images/twitter.svg" alt=""> Twitter</a></li>
+              <li><a class="dropdown-item" href="#"><img src="images/facebook.svg" alt=""> Facebook</a></li>
+              <li><a class="dropdown-item" href="#"><img src="images/x.svg" alt=""> Delete website</a></li>
+            </ul>
+          </div>
         </nav>
       </header>
 
