@@ -19,7 +19,8 @@ const myList = document.querySelector('#dropdown-menu');
 languageCodes.forEach(function(value, key) {
   const newList = document.createElement('li');
   const newLink = document.createElement('a');
-  newLink.classList.add("dropdown-item notranslate");
+  newLink.classList.add("dropdown-item");
+  newLink.classList.add("notranslate");
   newLink.innerHTML = key;
   newList.appendChild(newLink);
   myList.appendChild(newList);
