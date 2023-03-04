@@ -25,10 +25,15 @@ languageCodes.forEach(function(value, key) {
 });
 
 alert("two")
+/* 
 if (window.location.href.includes("njhama.github.io"))  {
+  console.log("ok we in")
   //document.querySelector('#translateButton').innerHTML = "English";
+
 }
-else  {
+*/
+//else
+if (!window.location.href.includes("njhama.github.io"))  {
   console.log(window.location.href.substring(window.location.href.indexOf("_x_tr_tl=") + 9).split("&")[0]);
   let languageCode = window.location.href.substring(window.location.href.indexOf("_x_tr_tl=") + 9).split("&")[0];
   for (const [key, value] of languageCodes.entries()) {
