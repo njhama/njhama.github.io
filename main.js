@@ -13,8 +13,6 @@ const languageCodes = new Map([
   ["Portuguese", "pt"],
 ]);
 
-
-
 const myList = document.querySelector('#dropdown-menu');
 languageCodes.forEach(function(value, key) {
   const newList = document.createElement('li');
@@ -26,14 +24,10 @@ languageCodes.forEach(function(value, key) {
   myList.appendChild(newList);
 });
 
-
-
 if (window.location.href.includes("njhama.github.io"))  {
-  //console.log("ok we in")
+  //console.log("nicky was here")
   document.querySelector('#translateButton').textContent = "English";
 }
-
-//else
 else  {
   console.log(window.location.href.substring(window.location.href.indexOf("_x_tr_tl=") + 9).split("&")[0]);
   let languageCode = window.location.href.substring(window.location.href.indexOf("_x_tr_tl=") + 9).split("&")[0];
@@ -47,7 +41,6 @@ else  {
   }
 }
   
-  //alert("loaded");
 myList.addEventListener('click', function(event) {
   console.log('click');
   if (event.target.tagName === 'A') {

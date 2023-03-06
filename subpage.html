@@ -18,17 +18,29 @@
           --bs-btn-hover-bg:  #990302;
           --bs-btn-active-bg: #990302;
           --bs-btn-border-color:#990302;
+          --bs-btn-hover-border-color:#990302;
         }
         
+        .dropdown-menu a:hover {
+          background-color: #a6a6a6;
+        }
         
         #share_btn {
           filter: invert(6%) sepia(100%) saturate(4607%) hue-rotate(342deg) brightness(94%) contrast(82%);
         }
       
+        .btn:hover  #share_btn {
+          filter: brightness(0) invert(1) sepia(100%) saturate(10000%) hue-rotate(295deg) brightness(1000%);
+        }
 
         #play_btn {
           filter: invert(6%) sepia(100%) saturate(4607%) hue-rotate(342deg) brightness(94%) contrast(82%);
         }
+
+        .btn:hover #play_btn {
+          filter: brightness(0) invert(1) sepia(100%) saturate(10000%) hue-rotate(295deg) brightness(800%);
+        }
+
 
       
 
@@ -51,7 +63,7 @@
             <button type="button" id = "translateButton" class="btn btn-outline-danger dropdown-toggle notranslate" data-bs-toggle="dropdown" aria-expanded="false">
               Translate
             </button>
-            <ul class="dropdown-menu" id = "dropdown-menu"></ul>
+            <ul class="dropdown-menu dropdown-menu-end" id = "dropdown-menu"></ul>
           </div>
 
           <!--Share-->
