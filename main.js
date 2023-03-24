@@ -52,7 +52,20 @@ myList.addEventListener('click', function(event) {
 function myFunction(clickedElement) {
   console.log('The following li element was clicked:', clickedElement.innerHTML);
   window.location.href = window.location.host.includes("njhama.github.io") ? "https://njhama-github-io.translate.goog" + window.location.pathname + "?_x_tr_sl=auto&_x_tr_tl=" + languageCodes.get(clickedElement.innerHTML) + "&_x_tr_hl=en&_x_tr_pto=wapp" : (languageCodes.get(clickedElement.innerHTML) == "en" ? "https://njhama.github.io" + window.location.pathname : "https://njhama-github-io.translate.goog" + window.location.pathname + "?_x_tr_sl=auto&_x_tr_tl=" + languageCodes.get(clickedElement.innerHTML) + "&_x_tr_hl=en&_x_tr_pto=wapp");
+};
+
+
+
+function myFunc() {
+  alert("sdkfsdkfjs");
 }
 
 
-
+const myDropdown = document.querySelector('#myDropdown');
+const shareBtn = document.querySelector('#share_btn');
+myDropdown.addEventListener('show.bs.dropdown', function () {
+  shareBtn.style.filter = 'brightness(0) invert(1) sepia(100%) saturate(10000%) hue-rotate(295deg) brightness(1000%)';   
+});
+myDropdown.addEventListener('hide.bs.dropdown', function () {
+  shareBtn.style.filter = 'invert(6%) sepia(100%) saturate(4607%) hue-rotate(342deg) brightness(94%) contrast(82%)';   
+});
