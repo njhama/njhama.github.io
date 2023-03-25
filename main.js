@@ -100,7 +100,7 @@ function getEmailShare(){
 function getLinkedInShare(){
   try{
     const [h,sh] = getPageHeadlines();
-    let href = 'https://www.linkedin.com/sharing/share-offsite/?url='+'https://www.uscannenbergmedia.com/2023/03/21/defying-all-odds-saneel-sharma-shines-a-light-during-dark-times-for-the-queer-community/';
+    let href = 'https://www.linkedin.com/sharing/share-offsite/?url='+location.href;
     console.log(href);
     document.getElementById('dropdown-linkedin').setAttribute('href',href);
   }
