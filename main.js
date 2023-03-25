@@ -139,15 +139,3 @@ function getFacebookShare(){
     console.error('Some headline missing');
   }
 }
-
-
-
-
-const myDropdown = document.querySelector('#myDropdown');
-const shareBtn = document.querySelector('#share_btn');
-myDropdown.addEventListener('show.bs.dropdown', function () {
-  shareBtn.style.filter = 'brightness(0) invert(1) sepia(100%) saturate(10000%) hue-rotate(295deg) brightness(1000%)';   
-});
-myDropdown.addEventListener('hide.bs.dropdown', function () {
-  shareBtn.style.filter = 'invert(6%) sepia(100%) saturate(4607%) hue-rotate(342deg) brightness(94%) contrast(82%)';   
-});
