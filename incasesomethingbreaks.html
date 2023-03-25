@@ -1,0 +1,8 @@
+<select id="dropdown" class="notranslate"> </select>
+<script> const languageCodes = new Map([["Chinese (simplified)", "zh-CN"], 
+["English", "en"], 
+["French", "fr"], 
+["Italian", "it"], 
+["Japanese", "ja"], 
+["Spanish", "es"]]); 
+const languageSelect = document.getElementById('dropdown'); if (!languageSelect) { console.error('The language select element could not be found'); } else { languageCodes.forEach(function (value, key) { const option = document.createElement('option'); option.value = key; option.textContent = key; languageSelect.appendChild(option); }); }; if (window.location.href.includes("uscannenbergmedia.com")) { languageSelect.value = "English" } else { console.log(window.location.href.substring(window.location.href.indexOf("_x_tr_tl=") + 9).split("&")[0]); let languageCode = window.location.href.substring(window.location.href.indexOf("_x_tr_tl=") + 9).split("&")[0]; for (const [key, value] of languageCodes.entries()) { if (value === languageCode) { languageSelect.value = key; break; } } } languageSelect.addEventListener('change', function () { window.location.href = window.location.host.includes("uscannenbergmedia.com") ? "https://www-uscannenbergmedia-com.translate.goog" + window.location.pathname + "?_x_tr_sl=auto&_x_tr_tl=" + languageCodes.get(this.value) + "&_x_tr_hl=en&_x_tr_pto=wapp" : (languageCodes.get(this.value) == "en" ? "https://www.uscannenbergmedia.com" + window.location.pathname : "https://www-uscannenbergmedia-com.translate.goog" + window.location.pathname + "?_x_tr_sl=auto&_x_tr_tl=" + languageCodes.get(this.value) + "&_x_tr_hl=en&_x_tr_pto=wapp"); }); </script>

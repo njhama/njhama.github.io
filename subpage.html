@@ -50,7 +50,7 @@
         <nav>
           <!--Listen-->
           <button type="button" class="btn btn-outline-danger notranslate">
-            <img src="play.svg" id= "play_btn" alt="">
+            <img src="https://annenberg-media.s3.amazonaws.com/play.svg" id= "play_btn" alt="">
             Listen to this article
           </button>
           
@@ -59,21 +59,21 @@
             <button type="button" id = "translateButton" class="btn btn-outline-danger dropdown-toggle notranslate" data-bs-toggle="dropdown" aria-expanded="false">
               Translate
             </button>
-            <ul class="dropdown-menu dropdown-menu-end" id = "dropdown-menu"></ul>
+            <ul class="dropdown-menu" id = "dropdown-menu"></ul>
           </div>
 
           <!--Share-->
-          <div class="btn-group" id = "myDropdown">
-            <button type="button" class="btn btn-outline-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id = "tests">
-              <img id = "share_btn" src="share.svg" alt="">
+          <div class="btn-group" id="myDropdown">
+            <button type="button" class="btn btn-outline-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <img id = "share_btn" src="https://njhama.github.io/share.svg" alt="">
             </button>
             <ul class="dropdown-menu notranslate">
-              <li><a class="dropdown-item" href="#" onclick = "myFunc()"><img src="images/link.svg" alt=""> Copy Link</a></li>
-              <li><a class="dropdown-item" href="https://mail.google.com/mail/u/0/?tab=wm#inbox" target="_blank"><img src="images/mail.svg" alt=""> Email</a></li>
-              <li><a class="dropdown-item" href="https://www.linkedin.com/feed/" target="_blank"><img src="images/linkedin.svg" alt=""> Linkedin</a></li>
-              <li><a class="dropdown-item" href="https://twitter.com/" target="_blank"><img src="images/twitter.svg" alt=""> Twitter</a></li>
-              <li><a class="dropdown-item" href="https://www.facebook.com/" target="_blank"><img src="images/facebook.svg" alt=""> Facebook</a></li>
-              <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><img src="images/trash-2.svg" alt=""> Delete Website</a></li>
+              <li><a class="dropdown-item" href="javascript:void(0)" onclick="copyPageUrl()"><img src="https://njhama.github.io/images/link.svg" alt=""> Copy Link</a></li>
+              <li><a id ="dropdown-email" class="dropdown-item" href="javascript:void(0)" onclick="getEmailShare()"><img src="https://njhama.github.io/images/mail.svg" alt=""> Email</a></li>
+              <li><a id="dropdown-linkedin" class="dropdown-item" href="javascript:void(0)" onclick="getLinkedInShare()" target="_blank"><img src="https://njhama.github.io/images/linkedin.svg" alt=""> Linkedin</a></li>
+              <li><a id="dropdown-twitter" class="dropdown-item" href="javascript:void(0)" onclick="getTwitterShare()" target="_blank"><img src="https://njhama.github.io/images/twitter.svg" alt=""> Twitter</a></li>
+              <li><a id="dropdown-facebook" class="dropdown-item" href="javascript:void(0)" onclick="getFacebookShare()" target="_blank"><img src="https://njhama.github.io/images/facebook.svg" alt=""> Facebook</a></li>
+              <!-- <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><img src="images/trash-2.svg" alt=""> Delete Website</a></li> -->
             </ul>
           </div>
 
@@ -82,7 +82,8 @@
       </header>
 
       <main>
-        <h2>Nicky is Cool</h2>
+        <h2 class="headline">Nicky is Cool</h2>
+        <h3 class="sub-headline">Nicky is more cool</h3>
         <p>The beauty of nature has been a source of inspiration for many poets, artists, and musicians throughout history. From the breathtaking landscapes of the Grand Canyon to the serene waters of a mountain lake, the natural world has the power to evoke strong emotions in those who experience it. However, despite its undeniable beauty, nature can also be incredibly cruel and unforgiving. Natural disasters such as earthquakes, hurricanes, and wildfires can cause widespread devastation, destroying homes and taking lives. Despite its dangers, however, there is still something undeniably alluring about nature and the great outdoors. Whether it is a leisurely hike through the woods or a strenuous climb up a mountain peak, there is something about being in the great outdoors that makes us feel truly alive. In the end, whether it is through art, music, or simply being in its presence, the beauty of nature will continue to inspire and captivate us for generations to come.</p>
       </main>
       <footer>
