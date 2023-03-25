@@ -1,0 +1,15 @@
+3<!DOCTYPE html>
+<html>
+<head>
+  <title>My Webpage</title>
+  <style>
+    .dropdown {
+      color: red
+    }
+  </style>
+</head>
+<body>
+  <a href="subpage.html">Go to Page</a>
+  <a href="test.html">Test Article</a>
+</body>
+</html>
