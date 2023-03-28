@@ -27,10 +27,16 @@
         #share_btn {
           filter: invert(6%) sepia(100%) saturate(4607%) hue-rotate(342deg) brightness(94%) contrast(82%);
         }
-      
+
+        .btn:active #share_btn {
+          filter: brightness(0) invert(1) sepia(100%) saturate(10000%) hue-rotate(295deg) brightness(1000%);
+        }
+
         .btn:hover  #share_btn {
           filter: brightness(0) invert(1) sepia(100%) saturate(10000%) hue-rotate(295deg) brightness(1000%);
         }
+      
+        
 
         #play_btn {
           filter: invert(6%) sepia(100%) saturate(4607%) hue-rotate(342deg) brightness(94%) contrast(82%);
@@ -68,7 +74,7 @@
               <img id = "share_btn" src="share.svg" alt="">
             </button>
             <ul class="dropdown-menu notranslate">
-              <li><a class="dropdown-item" href="#" onclick = "myFunc()"><img src="images/link.svg" alt=""> Copy Link</a></li>
+              <li><a class="dropdown-item" href="javascript:void(0)" onclick = "myFunc()"><img src="images/link.svg" alt=""> Copy Link</a></li>
               <li><a class="dropdown-item" href="https://mail.google.com/mail/u/0/?tab=wm#inbox" target="_blank"><img src="images/mail.svg" alt=""> Email</a></li>
               <li><a class="dropdown-item" href="https://www.linkedin.com/feed/" target="_blank"><img src="images/linkedin.svg" alt=""> Linkedin</a></li>
               <li><a class="dropdown-item" href="https://twitter.com/" target="_blank"><img src="images/twitter.svg" alt=""> Twitter</a></li>
@@ -109,9 +115,7 @@
         }
 
         /*white its actlce */
-        .myDropdown:active #share_btn {
-          filter: brightness(0) invert(1) sepia(100%) saturate(10000%) hue-rotate(295deg) brightness(1000%);
-        }
+        
       </style>
     
     
