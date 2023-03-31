@@ -24,7 +24,7 @@ languageCodes.forEach(function(value, key) {
   myList.appendChild(newList);
 });
 
-if (window.location.href.includes("njhama.github.io"))  {
+if (document.documentElement.lang === 'en'){
   document.querySelector('#translateButton').textContent = "English";
 }
 else  {
@@ -53,20 +53,8 @@ function myFunction(clickedElement) {
   window.location.href = window.location.host.includes("njhama.github.io") ? "https://njhama-github-io.translate.goog" + window.location.pathname + "?_x_tr_sl=auto&_x_tr_tl=" + languageCodes.get(clickedElement.innerHTML) + "&_x_tr_hl=en&_x_tr_pto=wapp" : (languageCodes.get(clickedElement.innerHTML) == "en" ? "https://njhama.github.io" + window.location.pathname : "https://njhama-github-io.translate.goog" + window.location.pathname + "?_x_tr_sl=auto&_x_tr_tl=" + languageCodes.get(clickedElement.innerHTML) + "&_x_tr_hl=en&_x_tr_pto=wapp");
 };
 
-
-
-function myFunc() {
-  alert("sdkfsdkfjs");
-}
-
 const myDropdown = document.querySelector('#myDropdown');
 const shareBtn = document.querySelector('#share_btn');
-myDropdown.addEventListener('show.bs.dropdown', function () {
-  shareBtn.style.filter = 'brightness(0) invert(1) sepia(100%) saturate(10000%) hue-rotate(295deg) brightness(1000%)';   
-});
-myDropdown.addEventListener('hide.bs.dropdown', function () {
-  shareBtn.style.filter = 'invert(6%) sepia(100%) saturate(4607%) hue-rotate(342deg) brightness(94%) contrast(82%)';   
-});
 
 async function copyPageUrl() {
   try {
@@ -80,9 +68,15 @@ async function copyPageUrl() {
 
 function getPageHeadlines(){
   try{
+    var elem = document.createElement('textarea');
+
     let h = document.getElementsByClassName('headline')[0].innerHTML;
+    elem.innerHTML = h;
+    h = encodeURIComponent(elem.value);
     console.log(h);
     let sh = document.getElementsByClassName('sub-headline')[0].innerHTML;
+    elem.innerHTML = sh;
+    sh = encodeURIComponent(elem.value);
     console.log(sh);
     return [h,sh];
   }
@@ -118,7 +112,6 @@ function getLinkedInShare(){
 function getTwitterShare(){
   try{
     const [h,sh] = getPageHeadlines();
-    // let href = 'https://twitter.com/intent/tweet?url='+location.href+'&via=AnnenbergMedia&text='+h;
     let href = 'https://twitter.com/intent/tweet?url='+location.href+'&via=AnnenbergMedia&text='+h;
     console.log(href);
     document.getElementById('dropdown-twitter').setAttribute('href',href);
@@ -139,3 +132,59 @@ function getFacebookShare(){
     console.error('Some headline missing');
   }
 }
+
+const synth = window.speechSynthesis;
+let listenButton = document.getElementById('listen');
+
+function getArticleText(){
+  const [h,sh] = getPageHeadlines();
+  const article = document.querySelector('article');
+  const paragraphs = article.querySelectorAll('p');
+  let text = decodeURIComponent(h) + (h.endsWith('.') ? " " : ". ") + decodeURIComponent(sh) + (sh.endsWith('.') ? " " : ". ");
+  paragraphs.forEach(paragraph => {
+    text += paragraph.textContent+" ";
+  });
+  console.log(text);
+  return text;
+}
+
+function stopPlaying(){
+  // synth.pause();
+  synth.cancel();
+  listenButton.innerHTML = "<i id='play_btn' class='bi bi-play-circle'></i> Listen to this article";
+  listenButton.onclick = readAloudStuff;
+}
+
+function readAloudStuff(){
+  const article_text = getArticleText();
+  console.log("Final text = "+article_text);
+  var utterThis = new SpeechSynthesisUtterance(article_text);
+
+  utterThis.addEventListener('start',()=>{
+    if(synth.speaking){
+      console.log('Speaking');
+      listenButton.innerHTML = " <i id='play_btn' class='bi bi-stop-circle' style='color:#990302'></i> Stop playing"
+      listenButton.onclick = stopPlaying;
+    }
+  });
+
+  utterThis.addEventListener('end',()=>{
+    if(!synth.speaking){
+      console.log('Speaking ended');
+      listenButton.innerHTML = "<i id='play_btn' class='bi bi-play-circle'></i> Listen to this article";
+      listenButton.onclick = readAloudStuff;
+    }
+  });
+
+  utterThis.addEventListener('error',(event)=>{
+    console.error(`SpeechSynthesisUtterance error: ${event.error}`);
+  });
+
+  utterThis.rate = 0.9 //varies between 0.5 to 2
+
+  synth.speak(utterThis);
+}
+
+
+
+
